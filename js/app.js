@@ -19,11 +19,16 @@ const mensajeElement = document.getElementById('mensaje');
 const textoTipeadoElement = document.getElementById('texto-tipeado');
 const marcasElement = document.getElementById('marcas');
 
+//varibles para realizar un top de mejores tiempos
 let top1 = window.localStorage.getItem("1");
 let top2 =window.localStorage.getItem("2");
 let top3 =window.localStorage.getItem("3");
-
+//mostramos en las vista el top con los tiempos
 marcasElement.innerHTML = "<p>Top1 "+top1+" Top2 " + top2 + " Top3 "+top3+"</p>"
+
+//desacticamos el input antes que empiece el juego
+textoTipeadoElement.disabled=true;
+
 
 //agregamos evento al boton inicio y con ello la logica que se necita
 document.getElementById('inicio').addEventListener('click', () => {
@@ -80,12 +85,12 @@ textoTipeadoElement.addEventListener('input', () => {
         }
 
 
-        const message = `FELICITACIONES! Finalizaste en ${tiempo / 1000} segundos.`;
+        const mensaje = `FELICITACIONES! Finalizaste en ${tiempo / 1000} segundos.`;
         //esto es para que al final quede vacio el imput
         textoTipeadoElement.value = '';
         //mostramos el mensaje de exito
         mensajeElement.className = 'exito' 
-        mensajeElement.innerText = message;
+        mensajeElement.innerText = mensaje;
 
         //desabilitamos el input al terminar 
         textoTipeadoElement.disabled=true;
