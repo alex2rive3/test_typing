@@ -83,8 +83,6 @@ textoTipeadoElement.addEventListener('input', () => {
         }else if (tiempo <= window.localStorage.getItem("3")) {
             window.localStorage.setItem("3",tiempo);
         }
-
-
         const mensaje = `FELICITACIONES! Finalizaste en ${tiempo / 1000} segundos.`;
         //esto es para que al final quede vacio el imput
         textoTipeadoElement.value = '';
