@@ -24,17 +24,19 @@ let top1 = window.localStorage.getItem("1");
 let top2 =window.localStorage.getItem("2");
 let top3 =window.localStorage.getItem("3");
 //mostramos en las vista el top con los tiempos
-marcasElement.innerHTML = "<p>Top1 "+top1+" Top2 " + top2 + " Top3 "+top3+"</p>"
+marcasElement.innerHTML = "<h4>Mejores Marcas</h4><span>Top1: "+top1+"</span><br><span> Top2: " + top2 + " </span><br><span>Top3:  "+top3+"</span>"
 
 //desacticamos el input antes que empiece el juego
 textoTipeadoElement.disabled=true;
-
 
 //agregamos evento al boton inicio y con ello la logica que se necita
 document.getElementById('inicio').addEventListener('click', () => {
     //avilitamos el input para escribir las palabras del test
     textoTipeadoElement.disabled=false;
-
+    
+    textoTipeadoElement.className = 'form-control';
+    mensajeElement.className=""
+    
     //de manera aleatoria se elije el indice del texto a mostrar
     const textoIndice = Math.floor(Math.random() * textos.length);
     // accedemos a nuestra matriz para opter el texto 
@@ -113,7 +115,7 @@ textoTipeadoElement.addEventListener('input', () => {
         //vamos controlando que las palabra se esta escribiendo de manera correcta
     } else if (palabraActual.startsWith(palabraEscrita)) {
         // resaltar la siguiente palabra
-        textoTipeadoElement.className = '';
+        textoTipeadoElement.className = 'form-control';
     } else {
       // en caso que haya un error al escribir el imput se pinta de rojo para denotar el error
       textoTipeadoElement.className = 'error';

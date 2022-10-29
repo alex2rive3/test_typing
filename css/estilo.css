@@ -1,16 +1,33 @@
+@import url(https://fonts.google.com/specimen/Montserrat);
 body{
+    font-family: "Montserrat";
     text-align: center;
+    background-color: #0D1B1E;
+}
+p{
+    padding: 6px 12%;
+}
+span{
+    font-size: 18px;
 }
 .resaltar {
-    background-color: yellow;
+    background-color: #197BBD;
+    color: #E8E9F3;
 }
 
 .error {
-    background-color: lightcoral;
-    border-color: red;
+    background-color: #AD2831;
+    color: #E8E9F3;
+    border-color: #640D14;
+    padding: 2px 4px;
+    height: 40px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
 }
 .exito{
-    background-color: green;
+    background-color: #306B34;
+    color: #E8E9F3;
 }
 .card{
     width: 700px;
@@ -18,4 +35,12 @@ body{
     position: absolute;
     inset: 0;
     margin:auto;
+}
+#inicio{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+.form{
+    inset: 0;
+    margin: 20px auto 15px auto;
 }
